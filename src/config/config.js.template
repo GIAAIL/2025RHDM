@@ -45,7 +45,7 @@ var config = {
             ]
         },
         {
-            id: 'second-identifier',
+            id: 'second-chapter-',
             alignment: 'right',
             hidden: false,
             title: 'Second Title',
@@ -70,7 +70,7 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'third-identifier',
+            id: 'chapter-03',
             alignment: 'left',
             hidden: false,
             title: 'Third Title',

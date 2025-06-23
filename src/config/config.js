@@ -24,7 +24,7 @@ export default {
   // 各章節定義（對應 scrollama）
   chapters: [
     {
-      id: "first-identifier",
+      id: "chapter-01",
       alignment: "left",
       hidden: false,
       title: "",
@@ -43,7 +43,7 @@ export default {
       mediaType: "none",
     },
     {
-      id: "second-identifier",
+      id: "chapter-02",
       alignment: "left",
       hidden: false,
       title: "交大實景拍攝影像",
@@ -62,7 +62,7 @@ export default {
       mediaType: "image",
     },
     {
-      id: "third-identifier",
+      id: "chapter-03",
       alignment: "left",
       hidden: false,
       title: "空拍分析影像 白海豚",
@@ -81,7 +81,7 @@ export default {
       mediaType: "videoFile",
     },
     {
-      id: "fourth-identifier",
+      id: "chapter-04",
       alignment: "left",
       hidden: false,
       title: "無人機苗栗山區道路自主導航",
@@ -101,7 +101,7 @@ export default {
       mediaType: "video",
     },
     {
-      id: "sixth-identifier",
+      id: "chapter-05",
       alignment: "left",
       hidden: false,
       title: "群飛路徑視覺化測試資料",
@@ -120,7 +120,7 @@ export default {
       mediaType: "none",
     },
     {
-      id: "seventh-identifier",
+      id: "chapter-06",
       alignment: "left",
       hidden: false,
       title: "台東多良車站即時影像",

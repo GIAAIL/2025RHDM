@@ -54,7 +54,7 @@ export function setupStoryElements(config, map) {
 
   // Navbar for chapter jump
   config.chapters.forEach((c) => {
-    if (c.id !== "first-identifier") {
+    if (c.id !== "chapter-01") {
       // 除了首頁都要建立迷你選單
       var a = document.createElement("a");
       var linkText = document.createTextNode(c.title);
