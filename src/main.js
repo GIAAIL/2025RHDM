@@ -9,6 +9,9 @@ import { loadDolphinChapter } from "./modules/chapters/dolphinChapter.js";
 import { loadMiaoliDroneChapter } from "./modules/chapters/miaoliDroneChapter.js";
 import { load3dDroneChapter } from "./modules/chapters/3dDroneChapter.js";
 import { loadStreamChapter } from "./modules/chapters/streamChapter.js";
+import { loadJingmeiRiverChapter } from "./modules/chapters/JingmeiRiverChapter.js";
+import { loadNanliaoHarborChapter } from "./modules/chapters/loadNanliaoHarborChapter.js";
+// import { loadJingmeiRiver3DChapter } from "./modules/chapters/JingmeiRiver3DChapter.js";
 
 import { openSidebar, closedSidebar } from "./modules/utils/sidebar.js";
 import config from "./config/config.js";
@@ -29,13 +32,16 @@ async function init() {
 
   setupStoryElements(config, map);
 
-  // 章節初始化（尚未實作細節）
+  // 章節初始化
   loadNycuChapter(map);
   loadDolphinChapter(map);
   loadMiaoliDroneChapter(map);
   load3dDroneChapter(map, tb);
   loadStreamChapter(map);
   load3DBuildingsLayer(map);
+  loadJingmeiRiverChapter(map);
+  loadNanliaoHarborChapter(map);
+  // loadJingmeiRiver3DChapter(map, tb);
 
   setupScrollEvents(map, insetMap, tb, config);
 }

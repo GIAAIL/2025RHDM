@@ -32,6 +32,7 @@ export function mapOnEvents(map, id, mediaType) {
     });
 
     // 根據媒體類型切換媒體內容
+
     if (mediaType === "image") changeImageSource(props.imgurl);
     if (mediaType === "videoLocal") changeVideoFileSource(props.videourl);
     if (mediaType === "videoApi") changeVideoSource(props.videourl);

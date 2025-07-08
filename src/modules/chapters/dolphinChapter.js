@@ -12,7 +12,7 @@ export async function loadDolphinChapter(map) {
   //讀入資料來源
   loadGeojsonSource(map, {
     sourceId: sourceId,
-    geojsonPath: "datasets/Dolphin/video/dp/dolphin_data.geojson",
+    geojsonPath: "datasets/Dolphin/video/dp/data.geojson",
   });
 
   //增加視覺化圖層

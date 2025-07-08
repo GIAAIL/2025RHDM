@@ -1,5 +1,4 @@
 // src/modules/init/setupStoryElements.js
-
 export function setupStoryElements(config, map) {
   const story = document.getElementById("story");
   const features = document.createElement("div");
@@ -47,6 +46,16 @@ export function setupStoryElements(config, map) {
     container.classList.add(record.alignment || "centered");
     if (record.hidden) container.classList.add("hidden");
 
+    // 判斷是否需要加入 Three.js viewer
+    if (record.plyViewer === true) {
+      const threeContainer = document.createElement("div");
+      threeContainer.setAttribute("id", "three-container");
+      threeContainer.style.width = "100%";
+      threeContainer.style.height = "500px";
+      threeContainer.style.margin = "1em 0";
+      chapter.appendChild(threeContainer);
+    }
+
     features.appendChild(container);
   });
 
@@ -55,28 +64,20 @@ export function setupStoryElements(config, map) {
   // Navbar for chapter jump
   config.chapters.forEach((c) => {
     if (c.id !== "chapter-01") {
-      // 除了首頁都要建立迷你選單
-      var a = document.createElement("a");
-      var linkText = document.createTextNode(c.title);
+      const a = document.createElement("a");
+      const linkText = document.createTextNode(c.title);
       a.classList.add("nav-item");
       a.appendChild(linkText);
       a.href = "#" + c.id;
       a.onclick = function () {
-        // 每次點擊選單的時候會飛到該章節
-        // console.log(c.location.center)
         map.flyTo({
           center: c.location.center,
           zoom: c.location.zoom,
           pitch: c.location.pitch,
           bearing: c.location.bearing,
           essential: true,
-          padding: {
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-          },
-          duration: 1200, // 動畫時長
+          padding: { top: 0, bottom: 0, left: 0, right: 0 },
+          duration: 1200,
         });
       };
       document.getElementById("navbar").appendChild(a);

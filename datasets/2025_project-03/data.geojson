@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [121.5728969, 24.98637409]
+      },
+      "properties": {
+        "title": "河道偵測",
+        "time": "2025_0214",
+        "videourl": "https://www.youtube.com/embed/khEDYG449Rs?autoplay=1&mute=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [121.571507, 24.982503]
+      },
+      "properties": {
+        "title": "人員偵測",
+        "time": "2024_0626"
+      }
+    }
+  ]
+}
