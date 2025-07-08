@@ -142,7 +142,7 @@ export default {
       id: "chapter-07",
       alignment: "left",
       hidden: false,
-      title: "中長程河道自主偵測及人員偵測",
+      title: "景美溪河道及人員偵測",
       description: "Autonomous River Detection",
       location: {
         center: [121.5728969, 24.98637409],
@@ -161,7 +161,7 @@ export default {
       id: "chapter-08",
       alignment: "left",
       hidden: false,
-      title: "新竹南寮漁港",
+      title: "新竹南寮漁港 無人機長程影像傳輸",
       description: "Hsinchu Nanliao Fishing Harbor",
       location: {
         center: [120.928638, 24.850431],

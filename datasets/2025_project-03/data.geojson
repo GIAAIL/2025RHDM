@@ -5,12 +5,12 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [121.5728969, 24.98637409]
+        "coordinates": [121.5729049, 24.9863739]
       },
       "properties": {
-        "title": "河道偵測",
+        "title": "景美溪 中長程河道自主偵測",
         "time": "2025_0214",
-        "videourl": "https://www.youtube.com/embed/khEDYG449Rs?autoplay=1&mute=1"
+        "videourl": "https://www.youtube.com/embed/XHLAmkzzkUY?autoplay=1&mute=1&modestbranding=1&loop=1&vq=hd1080&playlist=XHLAmkzzkUY"
       }
     },
     {
@@ -20,7 +20,7 @@
         "coordinates": [121.571507, 24.982503]
       },
       "properties": {
-        "title": "人員偵測",
+        "title": "景美溪 中長程河道人員偵測",
         "time": "2024_0626"
       }
     }

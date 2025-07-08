@@ -9,18 +9,19 @@ export function loadJingmeiRiverChapter(map) {
   const sourceId = chapterName + "_source";
   const layerId = chapterName + "point_layer";
   const iconID = chapterName + "icon";
-  const dataPath = "datasets/2025_project-03/pathCoord.geojson";
+  const LinedataPath = "datasets/2025_project-03/pathCoord.geojson";
+  const PointdataPath = "datasets/2025_project-03/data.geojson";
   const dataName = "Jingmei_River_Path_Tracking";
   const color = "#000000";
 
   //讀入資料來源
   loadGeojsonSource(map, {
     sourceId: sourceId,
-    geojsonPath: dataPath,
+    geojsonPath: PointdataPath,
   });
 
   //增加視覺化圖層
-  addLineLayer(map, dataPath, dataName, color);
+  addLineLayer(map, LinedataPath, dataName, color);
 
   addPointLayer(map, {
     layerId,
