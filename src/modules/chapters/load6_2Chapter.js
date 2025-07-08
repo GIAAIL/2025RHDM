@@ -3,8 +3,8 @@ import { loadGeojsonSource } from "../source/loadGeojsonSource.js";
 import { addPointLayer } from "../layers/addPointLayer.js";
 import { mapOnEvents } from "../utils/mapOnEvents.js";
 
-export function load4Chapter(map) {
-  const chapterName = "NanliaoHarbor";
+export function load6_2Chapter(map) {
+  const chapterName = "flapDrone ";
   const sourceId = chapterName + "_source";
   const layerId = chapterName + "point_layer";
   const iconID = chapterName + "icon";
@@ -12,7 +12,7 @@ export function load4Chapter(map) {
   //讀入資料來源
   loadGeojsonSource(map, {
     sourceId: sourceId,
-    geojsonPath: "datasets/2025_project-04/data.geojson",
+    geojsonPath: "datasets/2025_project-06_2/data.geojson",
   });
 
   addPointLayer(map, {

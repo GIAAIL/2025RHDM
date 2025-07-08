@@ -4,7 +4,7 @@ import { addPointLayer } from "../layers/addPointLayer.js";
 import { addLineLayer } from "../layers/addLineLayer.js";
 import { mapOnEvents } from "../utils/mapOnEvents.js";
 
-export function loadJingmeiRiverChapter(map) {
+export function load3Chapter(map) {
   const chapterName = "jingmeiRiver";
   const sourceId = chapterName + "_source";
   const layerId = chapterName + "point_layer";
