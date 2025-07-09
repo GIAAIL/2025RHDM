@@ -1,4 +1,4 @@
-// src/modules/chapters/JingmeiRiverChapter.js
+// src/modules/chapters/load3Chapter.js
 import { loadGeojsonSource } from "../source/loadGeojsonSource.js";
 import { addPointLayer } from "../layers/addPointLayer.js";
 import { addLineLayer } from "../layers/addLineLayer.js";

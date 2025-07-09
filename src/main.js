@@ -13,7 +13,8 @@ import { load3Chapter } from "./modules/chapters/load3Chapter.js";
 import { load4Chapter } from "./modules/chapters/loadNanliaoHarborChapter.js";
 import { load5Chapter } from "./modules/chapters/load5Chapter.js";
 import { load6_1Chapter } from "./modules/chapters/load6_1Chapter.js";
-import { load6_2Chapter } from "./modules/chapters/load6_2Chapter.js";
+import { load6_2_1Chapter } from "./modules/chapters/load6_2_1Chapter.js";
+import { load6_2_2Chapter } from "./modules/chapters/load6_2_2Chapter.js";
 // import { loadJingmeiRiver3DChapter } from "./modules/chapters/JingmeiRiver3DChapter.js";
 
 import { openSidebar, closedSidebar } from "./modules/utils/sidebar.js";
@@ -46,7 +47,8 @@ async function init() {
   load4Chapter(map);
   load5Chapter(map);
   load6_1Chapter(map);
-  load6_2Chapter(map);
+  load6_2_1Chapter(map);
+  load6_2_2Chapter(map);
   // loadJingmeiRiver3DChapter(map, tb);
 
   setupScrollEvents(map, insetMap, tb, config);
