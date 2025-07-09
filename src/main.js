@@ -3,6 +3,7 @@ import { setupStoryElements } from "./modules/init/setupStoryElements.js";
 import { initializeMap } from "./modules/init/mapConfig.js";
 import { setupScrollEvents } from "./modules/events/scrollEvents.js";
 
+import { setupAutoAdvance } from "./modules/events/autoAdvanceChapter.js";
 // 匯入所有章節（僅初始化結構，尚未實作內容）
 import { loadNycuChapter } from "./modules/chapters/nycuChapter.js";
 import { loadDolphinChapter } from "./modules/chapters/dolphinChapter.js";
@@ -52,6 +53,7 @@ async function init() {
   // loadJingmeiRiver3DChapter(map, tb);
 
   setupScrollEvents(map, insetMap, tb, config);
+  setupAutoAdvance();
 }
 
 init().catch((err) => {

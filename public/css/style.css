@@ -287,7 +287,7 @@ body {
 .nav {
   position: fixed;
   width: 300px;
-  bottom: 300px;
+  bottom: 250px;
   right: 20px;
 }
 
@@ -330,7 +330,7 @@ body {
 #mapInset {
   bottom: 40px;
   right: 20px;
-  height: 250px;
+  height: 200px;
   width: 300px;
   max-width: 100%;
   position: fixed;
