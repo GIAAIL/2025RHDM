@@ -235,14 +235,14 @@ export default {
       mediaType: "video",
       models: [
         {
-          path: "/2025RHDM/public/model/data1.gltf",
+          path: "../../../../public/model/data1.gltf",
           lngLat: [121.572001, 24.987395],
           altitude: 1,
           scale: 0.4,
           rotation: [0, 0, 90],
         },
         {
-          path: "/2025RHDM/public/model/data2.gltf",
+          path: "../../../../public/model/data2.gltf",
           lngLat: [121.5719, 24.98768],
           altitude: -1.2,
           scale: 0.4,
