@@ -235,14 +235,14 @@ export default {
       mediaType: "video",
       models: [
         {
-          path: "datasets/2025_project-06_2_1/水門/data.gltf",
+          path: "/model/6_2_1-1model.gltf",
           lngLat: [121.572001, 24.987395],
           altitude: 1,
           scale: 0.4,
           rotation: [0, 0, 90],
         },
         {
-          path: "datasets/2025_project-06_2_1/道南橋正面/data.gltf",
+          path: "/model/6_2_1-2model.gltf",
           lngLat: [121.5719, 24.98768],
           altitude: -1.2,
           scale: 0.4,
