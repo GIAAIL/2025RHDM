@@ -235,14 +235,14 @@ export default {
       mediaType: "video",
       models: [
         {
-          path: "model/data1.gltf",
+          path: "model/model1.gltf",
           lngLat: [121.572001, 24.987395],
           altitude: 1,
           scale: 0.4,
           rotation: [0, 0, 90],
         },
         {
-          path: "model/data2.gltf",
+          path: "model/model2.gltf",
           lngLat: [121.5719, 24.98768],
           altitude: -1.2,
           scale: 0.4,
