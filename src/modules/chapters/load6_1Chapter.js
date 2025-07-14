@@ -1,10 +1,10 @@
-// src/modules/chapters/JingmeiRiverChapter.js
+// src/modules/chapters/load6_1Chapter.js
 import { loadGeojsonSource } from "../source/loadGeojsonSource.js";
 import { addPointLayer } from "../layers/addPointLayer.js";
 import { mapOnEvents } from "../utils/mapOnEvents.js";
 
 export function load6_1Chapter(map) {
-  const chapterName = "flapDrone ";
+  const chapterName = "chapter-10";
   const sourceId = chapterName + "_source";
   const layerId = chapterName + "point_layer";
   const iconID = chapterName + "icon";

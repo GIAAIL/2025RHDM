@@ -7,7 +7,6 @@ export function loadStreamChapter(map) {
   const sourceId = chapterName + "_source";
   const layerId = chapterName + "point_layer";
   const iconID = chapterName + "icon";
-
   //讀入資料來源
   loadGeojsonSource(map, {
     sourceId: sourceId,

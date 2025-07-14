@@ -5,12 +5,12 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [120.6, 24.0]
+        "coordinates": [121.561555, 24.979622]
       },
       "properties": {
-        "title": "結合影像分割之智慧壓縮技術",
+        "title": "景美溪 結合影像分割之智慧壓縮技術",
         "videourl": "https://www.youtube.com/embed/q7FQ8JHORkE?autoplay=1&mute=1&modestbranding=1&loop=1&vq=hd1080&playlist=q7FQ8JHORkE",
-        "time": "2021_0820"
+        "time": "2023"
       }
     }
   ]
