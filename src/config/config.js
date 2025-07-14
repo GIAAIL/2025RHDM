@@ -248,6 +248,13 @@ export default {
           scale: 0.4,
           rotation: [0, 0, 290],
         },
+        {
+          path: "model/model3.gltf",
+          lngLat: [121.5719, 24.98768],
+          altitude: -1.2,
+          scale: 0.4,
+          rotation: [0, 0, 290],
+        },
       ],
     },
     {
