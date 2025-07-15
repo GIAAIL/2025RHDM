@@ -22,9 +22,7 @@ export function addGlbLayer(
     altitude = 0,
     scale = 1,
     rotation = [0, 0, 0],
-    ambientLightIntensity = 0.1,
-    overrideMaterial = true,
-    materialColor = 0xffffff,
+    ambientLightIntensity = 0.8,
   }
 ) {
   if (!map || !tb) {
@@ -37,56 +35,53 @@ export function addGlbLayer(
     return;
   }
 
-  map.addLayer({
-    id: layerId,
-    type: "custom",
-    renderingMode: "3d",
-    onAdd: function () {
-      // ✅ 柔和環境光（AmbientLight）
-      const ambientLight = new THREE.AmbientLight(
-        0xffffff,
-        ambientLightIntensity
-      );
-      tb.scene.add(ambientLight);
+  map.addLayer(
+    {
+      id: layerId,
+      type: "custom",
+      renderingMode: "3d",
+      onAdd: function () {
+        //  加 ambient light 照亮原始材質
+        const ambientLight = new THREE.AmbientLight(
+          0xffffff,
+          ambientLightIntensity
+        );
+        tb.scene.add(ambientLight);
 
-      const opts = {
-        type: "gltf",
-        obj: modelUrl,
-        scale:
-          typeof scale === "number" ? { x: scale, y: scale, z: scale } : scale,
-        units: "meters",
-        rotation: {
-          x: rotation[0],
-          y: rotation[1],
-          z: rotation[2],
-        },
-      };
+        const opts = {
+          type: "gltf",
+          obj: modelUrl,
+          scale:
+            typeof scale === "number"
+              ? { x: scale, y: scale, z: scale }
+              : scale,
+          units: "meters",
+          rotation: {
+            x: rotation[0],
+            y: rotation[1],
+            z: rotation[2],
+          },
+        };
 
-      tb.loadObj(opts, (model) => {
-        model.setCoords([lngLat[0], lngLat[1], altitude]);
+        tb.loadObj(opts, (model) => {
+          model.setCoords([lngLat[0], lngLat[1], altitude]);
 
-        if (overrideMaterial) {
-          const standardMat = new THREE.MeshStandardMaterial({
-            color: materialColor,
-            metalness: 0.85, // 控制反光程度
-            roughness: 0.9, // 越高越粗糙、越擴散
-            flatShading: true, // 若想要更平面風格
-          });
-
+          //  不覆蓋材質，只控制投影與其他屬性
           model.traverse((child) => {
             if (child.isMesh) {
-              child.material = standardMat;
-              child.castShadow = false; // 若你要模型投影可改為 true
-              child.receiveShadow = true; // 若你有地面接收可改為 true
+              child.castShadow = false;
+              child.receiveShadow = true;
+              child.material.side = THREE.DoubleSide;
             }
           });
-        }
 
-        tb.add(model);
-      });
+          tb.add(model);
+        });
+      },
+      render: function () {
+        tb.update();
+      },
     },
-    render: function () {
-      tb.update();
-    },
-  });
+    undefined
+  );
 }

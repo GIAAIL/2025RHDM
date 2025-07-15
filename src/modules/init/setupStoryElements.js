@@ -63,7 +63,7 @@ export function setupStoryElements(config, map) {
 
   // Navbar for chapter jump
   config.chapters.forEach((c) => {
-    if (c.id !== "chapter-01") {
+    if (c.id !== "chapter-00") {
       const a = document.createElement("a");
       const linkText = document.createTextNode(c.title);
       a.classList.add("nav-item");

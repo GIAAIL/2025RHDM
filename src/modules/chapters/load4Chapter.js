@@ -4,7 +4,7 @@ import { addPointLayer } from "../layers/addPointLayer.js";
 import { mapOnEvents } from "../utils/mapOnEvents.js";
 
 export function load4Chapter(map) {
-  const chapterName = "NanliaoHarbor";
+  const chapterName = "load4Chapter";
   const sourceId = chapterName + "_source";
   const layerId = chapterName + "point_layer";
   const iconID = chapterName + "icon";

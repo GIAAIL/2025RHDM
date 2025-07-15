@@ -24,7 +24,7 @@ export default {
   // 各章節定義（對應 scrollama）
   chapters: [
     {
-      id: "chapter-01",
+      id: "chapter-00",
       alignment: "left",
       hidden: false,
       title: "",
@@ -43,10 +43,10 @@ export default {
       mediaType: "none",
     },
     {
-      id: "chapter-02",
+      id: "chapter-01",
       alignment: "left",
       hidden: false,
-      title: "交大實景拍攝影像",
+      title: "01. 交大實景拍攝影像",
       description: "Copy these sections to add to your story.",
       location: {
         center: [120.999, 24.7857],
@@ -62,10 +62,10 @@ export default {
       mediaType: "image",
     },
     {
-      id: "chapter-03",
+      id: "chapter-02",
       alignment: "left",
       hidden: false,
-      title: "空拍分析影像 白海豚",
+      title: "02. 空拍分析影像 白海豚",
       description: "拍攝標的物為白海豚...附兩段空拍影像供標註使用。",
       location: {
         center: [120.5, 24.3],
@@ -81,10 +81,10 @@ export default {
       mediaType: "videoFile",
     },
     {
-      id: "chapter-04",
+      id: "chapter-03",
       alignment: "left",
       hidden: false,
-      title: "無人機苗栗山區道路自主導航",
+      title: "03. 無人機苗栗山區道路自主導航",
       description:
         "使用無人機進行苗栗山區道路自主導航...影片已上傳至 YouTube。",
       location: {
@@ -101,10 +101,10 @@ export default {
       mediaType: "video",
     },
     {
-      id: "chapter-05",
+      id: "chapter-04",
       alignment: "left",
       hidden: false,
-      title: "群飛路徑視覺化測試資料",
+      title: "04. 群飛路徑視覺化測試資料",
       description: "Copy these sections to add to your story.",
       location: {
         center: [121.318873, 23.589414],
@@ -120,10 +120,10 @@ export default {
       mediaType: "none",
     },
     {
-      id: "chapter-06",
+      id: "chapter-05",
       alignment: "left",
       hidden: false,
-      title: "台東多良車站即時影像",
+      title: "05. 台東多良車站即時影像",
       description: "Taitung Amazing",
       location: {
         center: [120.96311, 22.50725],
@@ -139,10 +139,10 @@ export default {
       mediaType: "video",
     },
     {
-      id: "chapter-07",
+      id: "chapter-06",
       alignment: "left",
       hidden: false,
-      title: "新竹南寮漁港 無人機長程影像傳輸",
+      title: "06. 新竹南寮漁港 無人機長程影像傳輸",
       description: "Hsinchu Nanliao Fishing Harbor",
       location: {
         center: [120.928638, 24.850431],
@@ -158,10 +158,30 @@ export default {
       mediaType: "video",
     },
     {
+      id: "chapter-07",
+      alignment: "left",
+      hidden: false,
+      title: "07. 景美溪 精準復拍",
+      description: "景美溪 精準復拍",
+      location: {
+        center: [121.572698, 24.98791],
+        zoom: 19,
+        pitch: 26,
+        bearing: 0,
+      },
+      mapAnimation: "flyTo",
+      rotateAnimation: true,
+      callback: "",
+      onChapterEnter: [],
+      onChapterExit: [],
+      mediaType: "video",
+    },
+
+    {
       id: "chapter-08",
       alignment: "left",
       hidden: false,
-      title: "景美溪 中長程河道自主偵測及人員偵測",
+      title: "08. 景美溪 中長程河道自主偵測及人員偵測",
       description: "Autonomous River Detection",
       location: {
         center: [121.5721878, 24.98542485],
@@ -181,11 +201,11 @@ export default {
       id: "chapter-09",
       alignment: "left",
       hidden: false,
-      title: "景美溪 結合影像分割之智慧壓縮技術",
+      title: "09.景美溪 結合影像分割之智慧壓縮技術",
       description: "景美溪 結合影像分割之智慧壓縮技術",
       location: {
         center: [121.561555, 24.979622],
-        zoom: 15.5,
+        zoom: 19,
         pitch: 26,
         bearing: 0,
       },
@@ -200,11 +220,11 @@ export default {
       id: "chapter-10",
       alignment: "left",
       hidden: false,
-      title: "景美溪 拍翼機狹小空間影像傳輸",
+      title: "10.景美溪 拍翼機狹小空間影像傳輸",
       description: "景美溪 拍翼機狹小空間影像傳輸",
       location: {
         center: [121.572608, 24.988037],
-        zoom: 15.5,
+        zoom: 20,
         pitch: 26,
         bearing: 0,
       },
@@ -219,11 +239,11 @@ export default {
       id: "chapter-11",
       alignment: "left",
       hidden: false,
-      title: "景美溪 多機協同影像擷取與3D建模展示",
+      title: "11. 景美溪 多機協同影像擷取與3D建模展示",
       description: "景美溪 多機協同影像擷取與3D建模展示",
       location: {
-        center: [121.571873, 24.987575],
-        zoom: 19.8,
+        center: [121.571873, 24.987525],
+        zoom: 19,
         pitch: 75,
         bearing: -57,
       },
@@ -235,25 +255,18 @@ export default {
       mediaType: "video",
       models: [
         {
-          path: "model/model1.gltf",
-          lngLat: [121.572001, 24.987395],
-          altitude: 1,
+          path: "model/model1.glb",
+          lngLat: [121.572053, 24.987097],
+          altitude: -1,
           scale: 0.4,
-          rotation: [0, 0, 90],
+          rotation: [0, 0, 0],
         },
         {
-          path: "model/model2.gltf",
-          lngLat: [121.5719, 24.98768],
-          altitude: -1.2,
+          path: "model/model2.glb",
+          lngLat: [121.572062, 24.98758],
+          altitude: 0,
           scale: 0.4,
-          rotation: [0, 0, 290],
-        },
-        {
-          path: "model/model3.gltf",
-          lngLat: [121.5719, 24.98768],
-          altitude: -1.2,
-          scale: 0.4,
-          rotation: [0, 0, 290],
+          rotation: [0, 0, 112],
         },
       ],
     },
@@ -261,7 +274,7 @@ export default {
       id: "chapter-12",
       alignment: "left",
       hidden: false,
-      title: "頭前溪 多台無人機Formation結果",
+      title: "12. 頭前溪 多台無人機Formation結果",
       description: "頭前溪 多台無人機Formation結果",
       location: {
         center: [121.03463233198876, 24.796782019818245],

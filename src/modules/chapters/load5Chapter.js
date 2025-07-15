@@ -4,7 +4,7 @@ import { addPointLayer } from "../layers/addPointLayer.js";
 import { mapOnEvents } from "../utils/mapOnEvents.js";
 
 export function load5Chapter(map) {
-  const chapterName = "子五結合影像分割之智慧壓縮技術";
+  const chapterName = "load5Chapter";
   const sourceId = chapterName + "_source";
   const layerId = chapterName + "point_layer";
   const iconID = chapterName + "icon";

@@ -284,7 +284,7 @@ body {
 /* $Nav
 ---------------------------*/
 
-.nav {
+/* .nav {
   position: fixed;
   width: 300px;
   bottom: 250px;
@@ -311,6 +311,60 @@ body {
   color: #000000;
   text-shadow: -1.2px 0 rgb(255, 255, 255), 0 1.2px rgb(255, 255, 255),
     1.2px 0 rgb(255, 255, 255), 0 -1.2px rgb(255, 255, 255);
+} */
+.nav {
+  position: fixed;
+  width: 40px; /* 收起狀態 */
+  bottom: 250px;
+  right: 20px;
+  transition: width 0.3s ease;
+  /* overflow: hidden; */
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column; /* 確保 item 垂直排列 */
+  gap: 8px; /* 控制 nav-item 間距 (行距) */
+}
+
+/* 展開狀態 */
+.nav:hover {
+  width: 250px;
+}
+
+/* nav-item 保持單行，強制填滿父層寬度 */
+.nav-item {
+  display: block;
+  width: 100%; /* 強制佔滿一行 */
+  background-color: #e8e8e8;
+  padding: 6px 7px;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  color: #484848;
+  box-shadow: 0px 0px 5px rgb(140, 140, 140);
+  opacity: 0.7;
+
+  white-space: nowrap; /* 單行 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.2s ease;
+}
+
+/* 展開時，顯示完整內容，但仍單行 */
+.nav:hover .nav-item {
+  overflow: visible;
+  text-overflow: unset;
+}
+
+/* active 樣式 */
+.nav-item.active {
+  background-color: #94d0f5;
+  opacity: 1;
+  color: #000000;
+  text-shadow: -1.2px 0 rgb(255, 255, 255), 0 1.2px rgb(255, 255, 255),
+    1.2px 0 rgb(255, 255, 255), 0 -1.2px rgb(255, 255, 255);
 }
 
 /*-------------------------
@@ -331,7 +385,7 @@ body {
   bottom: 40px;
   right: 20px;
   height: 200px;
-  width: 300px;
+  width: 250px;
   max-width: 100%;
   position: fixed;
   z-index: 1;

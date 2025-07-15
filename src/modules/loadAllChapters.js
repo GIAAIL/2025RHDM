@@ -1,10 +1,12 @@
 // src/modules/loadAllChapters.js
-
+//2024計畫項目
 import { loadNycuChapter } from "./chapters/nycuChapter.js";
 import { loadDolphinChapter } from "./chapters/dolphinChapter.js";
 import { loadMiaoliDroneChapter } from "./chapters/miaoliDroneChapter.js";
 import { load3dDroneChapter } from "./chapters/3dDroneChapter.js";
 import { loadStreamChapter } from "./chapters/streamChapter.js";
+//2025計畫項目
+import { load1Chapter } from "./chapters/load1Chapter.js";
 import { load3Chapter } from "./chapters/load3Chapter.js";
 import { load4Chapter } from "./chapters/load4Chapter.js";
 import { load5Chapter } from "./chapters/load5Chapter.js";
@@ -20,6 +22,7 @@ export function loadAllChapters(map, tb) {
   load3dDroneChapter(map, tb);
   loadStreamChapter(map);
   // load3DBuildingsLayer(map);
+  load1Chapter(map);
   load3Chapter(map);
   load4Chapter(map);
   load5Chapter(map);

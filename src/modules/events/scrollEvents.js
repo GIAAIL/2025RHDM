@@ -74,7 +74,7 @@ function updateMiniNav(currentTitle) {
 }
 
 function toggleElementsVisibility(chapterId) {
-  const isFirst = chapterId === "chapter-01";
+  const isFirst = chapterId === "chapter-00";
 
   document.getElementById("hero")?.classList.toggle("hide", !isFirst);
   document.getElementById("info")?.classList.toggle("hide", isFirst);

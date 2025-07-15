@@ -5,7 +5,7 @@ import { addLineLayer } from "../layers/addLineLayer.js";
 import { mapOnEvents } from "../utils/mapOnEvents.js";
 
 export function load3Chapter(map) {
-  const chapterName = "jingmeiRiver";
+  const chapterName = "load3Chapter";
   const sourceId = chapterName + "_source";
   const layerId = chapterName + "point_layer";
   const iconID = chapterName + "icon";
