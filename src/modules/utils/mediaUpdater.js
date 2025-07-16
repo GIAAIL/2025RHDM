@@ -2,14 +2,14 @@
 
 // change info img
 export function changeImageSource(imgsrc) {
-  console.log("trigger image");
+  // console.log("trigger image");
 
   document.getElementById("Imgcontent").src = imgsrc;
 }
 
 // change info video
 export function changeVideoApiSource(videosrc) {
-  console.log("trigger videoApi", videosrc);
+  // console.log("trigger videoApi", videosrc);
 
   const iframe = document.getElementById("Videocontent");
 
@@ -18,7 +18,7 @@ export function changeVideoApiSource(videosrc) {
 
 // change info video
 export function changeVideoLocalSource(videosrc) {
-  console.log("trigger videoLocal");
+  // console.log("trigger videoLocal");
 
   document.getElementById("VideoFilecontent_Source").src = videosrc;
 

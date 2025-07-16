@@ -62,6 +62,7 @@ export default {
       onChapterExit: [],
       layerData: {
         source: {
+          LineSource: "datasets/nycu_photo/campus.geojson",
           PointSource:
             "datasets/nycu_photo/2023_0321_183347_photo_Info.geojson",
         },

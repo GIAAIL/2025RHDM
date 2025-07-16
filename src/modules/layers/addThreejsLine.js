@@ -3,7 +3,7 @@ export function addThreejsLine(tb, ur_lineGeometry) {
     var lineInstance = tb.line({
       geometry: data.features[0].geometry.coordinates,
       width: 2,
-      color: "#ffffff",
+      color: "#000000",
     });
     tb.add(lineInstance);
   });
