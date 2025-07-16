@@ -41,7 +41,7 @@ async function init() {
   setupScrollEvents(map, insetMap, tb, config);
 
   // 啟用自動章節切換功能
-  autoplay();
+  autoplay(map);
 }
 
 // 啟動初始化並捕捉錯誤

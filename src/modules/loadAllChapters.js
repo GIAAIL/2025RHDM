@@ -12,17 +12,6 @@ import config from "../config/config.js";
 export function loadAllChapters(map, tb) {
   config.chapters.map((chapter) => {
     if (chapter.id !== "chapter-00") {
-      // console.log(chapter);
-    }
-    const activeChapters = [
-      "chapter-07",
-      "chapter-01",
-      "chapter-02",
-      "chapter-03",
-      "chapter-04",
-    ];
-
-    if (chapter.id !== "chapter-00") {
       //讀入資料來源
       loadGeojsonSource(map, chapter.id);
 
