@@ -18,10 +18,10 @@ export function autoplay(map) {
     clearTimeout(idleTimer);
     clearTimeout(autoplayTimer);
 
-    console.log("[autoplay] 使用者互動偵測到，重設輪播倒數計時");
+    //console.log("[autoplay] 使用者互動偵測到，重設輪播倒數計時");
 
     idleTimer = setTimeout(() => {
-      console.log("[autoplay] 5 秒無操作，啟動自動輪播模式");
+      //console.log("[autoplay] 5 秒無操作，啟動自動輪播模式");
       currentStepIndex = -1;
       startAutoplay(map);
     }, idleDelay);
@@ -31,7 +31,7 @@ export function autoplay(map) {
     window.addEventListener(event, resetIdleTimer, { passive: true });
   });
 
-  console.log("[autoplay] 輪播監聽啟動，等待 5 秒閒置觸發播放");
+  //console.log("[autoplay] 輪播監聽啟動，等待 5 秒閒置觸發播放");
   resetIdleTimer();
 }
 
@@ -43,7 +43,7 @@ function startAutoplay(map) {
   const chapters = config.chapters;
 
   if (steps.length === 0 || chapters.length === 0) {
-    console.warn("[autoplay] 無法輪播：缺少章節或 DOM");
+    //console.warn("[autoplay] 無法輪播：缺少章節或 DOM");
     return;
   }
 
@@ -57,14 +57,14 @@ function startAutoplay(map) {
   const chapter = chapters[currentStepIndex];
   const stepElement = steps[currentStepIndex];
 
-  console.log(`[autoplay] 播放章節 #${currentStepIndex}: ${chapter.id}`);
+  //console.log(`[autoplay] 播放章節 #${currentStepIndex}: ${chapter.id}`);
   stepElement.scrollIntoView({ behavior: "smooth", block: "start" });
 
   let features = getFeaturesByChapterId(map, chapter.id);
   features = cullDupFeatures(features, false);
 
   if (features.length === 0) {
-    console.warn(`[autoplay] 該章節無 feature：${chapter.id}`);
+    //console.warn(`[autoplay] 該章節無 feature：${chapter.id}`);
     const delay = getMediaType(chapter) === "image" ? imgDelay : videoDelay;
 
     autoplayTimer = setTimeout(() => startAutoplay(map), delay);
@@ -81,7 +81,7 @@ function startAutoplay(map) {
  */
 function playFeaturesSequentially(map, features, chapter, index, onComplete) {
   if (index >= features.length) {
-    console.log("[autoplay] 該章節播放完畢");
+    //console.log("[autoplay] 該章節播放完畢");
     onComplete();
     return;
   }
@@ -89,11 +89,11 @@ function playFeaturesSequentially(map, features, chapter, index, onComplete) {
   const feature = features[index];
   const mediaType = getMediaType(chapter);
 
-  console.log(
-    `[autoplay] 播放 feature #${index + 1}/${features.length}:`,
-    feature.properties?.title || "(無標題)"
-  );
-  console.log(`[autoplay] 當前 mediaType:${chapter.id}| ${mediaType}`);
+  //console.log(
+  //   `[autoplay] 播放 feature #${index + 1}/${features.length}:`,
+  //   feature.properties?.title || "(無標題)"
+  // );
+  //console.log(`[autoplay] 當前 mediaType:${chapter.id}| ${mediaType}`);
 
   const delay = mediaType === "image" ? imgDelay : videoDelay;
 
@@ -122,10 +122,10 @@ function getFeaturesByChapterId(map, chapterId) {
       filter: ["==", "$type", "Point"],
     });
 
-    console.log(`[getFeaturesByChapterId] 取得 ${features.length} 個 features`);
+    //console.log(`[getFeaturesByChapterId] 取得 ${features.length} 個 features`);
     return features;
   } catch (err) {
-    console.warn(`[getFeaturesByChapterId] 查詢失敗：${sourceId}`, err);
+    //console.warn(`[getFeaturesByChapterId] 查詢失敗：${sourceId}`, err);
     return [];
   }
 }
@@ -151,10 +151,10 @@ function cullDupFeatures(features, verbose = false) {
   }
 
   if (verbose && dups.length > 0) {
-    console.warn(`[cullDupFeatures] 移除 ${dups.length} 筆重複資料 (by title)`);
+    //console.warn(`[cullDupFeatures] 移除 ${dups.length} 筆重複資料 (by title)`);
     const summary = {};
     dups.forEach((t) => (summary[t] = (summary[t] || 0) + 1));
-    console.table(summary);
+    //console.table(summary);
   }
 
   return result;
