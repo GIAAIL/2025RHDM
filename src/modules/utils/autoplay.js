@@ -4,9 +4,9 @@ import { handleFeatureClick } from "../events/featureHandler.js";
 let idleTimer = null;
 let autoplayTimer = null;
 
-const idleDelay = 10500; // 閒置 5 秒後啟動輪播
-const imgDelay = 3000;
-const videoDelay = 10000;
+const idleDelay = 3000; // 閒置 5 秒後啟動輪播
+const imgDelay = 1000;
+const videoDelay = 5000;
 
 let currentStepIndex = -1;
 
