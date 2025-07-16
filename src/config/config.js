@@ -339,7 +339,7 @@ export default {
       },
       models: [
         {
-          path: "model/model1.glb",
+          path: import.meta.env.BASE_URL + "model/model1.glb",
           lngLat: [121.572053, 24.987097],
           altitude: -1,
           scale: 0.4,
