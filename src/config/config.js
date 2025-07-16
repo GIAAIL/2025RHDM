@@ -91,7 +91,7 @@ export default {
           PointSource: "datasets/Dolphin/video/dp/data.geojson",
         },
         IconPath: "public/images/pin_dolphin_v5.png",
-        mediaType: "videoApi",
+        mediaType: "videoLocal",
       },
     },
     {
