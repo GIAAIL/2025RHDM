@@ -1,34 +1,35 @@
 // src/modules/utils/addPointLayer.js
+import { getLayerData } from "../utils/getLayerData.js";
 
 /**
- * 在地圖上新增 symbol 圖層（icon + 文字）
+ * 在地圖上新增 Symbol Layer（圖標 + 文字）
  * @param {mapboxgl.Map} map - 地圖實例
- * @param {Object} options - 圖層選項
- * @param {string} options.layerId - 圖層 ID
- * @param {string} options.sourceId - 資料來源 ID（需先由 loadSource 載入）
- * @param {string} options.iconPath - 自訂 icon 圖片路徑
- * @param {string} options.iconName - 圖片名稱（唯一）
- * @param {string} [options.textField='title'] - 顯示文字的欄位
- * @param {number} [options.iconSize=0.4]
- * @param {string} [options.textColor='#8e6428']
+ * @param {string} chapterID - 對應 config 裡的章節 ID
  */
-export function addPointLayer(
-  map,
-  {
-    layerId,
-    sourceId,
-    iconPath,
-    iconName,
-    textField = "title",
-    iconSize = 0.4,
-    textColor = "#8e6428",
-  }
-) {
-  map.loadImage(iconPath, (error, image) => {
-    if (error) throw error;
+export function addPointLayer(map, chapterID) {
+  const sourceId = `${chapterID}_PointSource`;
+  const layerId = `${chapterID}_PointLayer`;
+  const iconId = `${chapterID}_Icon`;
 
-    if (!map.hasImage(iconName)) {
-      map.addImage(iconName, image);
+  const data = getLayerData(chapterID);
+  if (!data || !data.IconPath) {
+    console.warn(`❌ 無法取得 ${chapterID} 的 IconPath`);
+    return;
+  }
+
+  // ✅ 直接設定參數（不要從 config 取得）
+  const iconSize = 0.4;
+  const textField = "title";
+  const textColor = "#8e6428";
+
+  map.loadImage(data.IconPath, (error, image) => {
+    if (error) {
+      console.error("❌ 載入 icon 失敗", error);
+      return;
+    }
+
+    if (!map.hasImage(iconId)) {
+      map.addImage(iconId, image);
     }
 
     if (!map.getLayer(layerId)) {
@@ -37,7 +38,7 @@ export function addPointLayer(
         type: "symbol",
         source: sourceId,
         layout: {
-          "icon-image": iconName,
+          "icon-image": iconId,
           "icon-size": iconSize,
           "icon-allow-overlap": true,
           "text-field": ["get", textField],

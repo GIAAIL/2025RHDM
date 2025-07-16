@@ -1,9 +1,9 @@
-export function addThreejsLine(ur_lineGeometry, tb, clr) {
+export function addThreejsLine(tb, ur_lineGeometry) {
   fetchFunction(ur_lineGeometry, function (data) {
     var lineInstance = tb.line({
       geometry: data.features[0].geometry.coordinates,
       width: 2,
-      color: clr,
+      color: "#ffffff",
     });
     tb.add(lineInstance);
   });

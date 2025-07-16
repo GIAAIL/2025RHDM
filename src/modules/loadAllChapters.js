@@ -1,33 +1,72 @@
 // src/modules/loadAllChapters.js
-//2024計畫項目
-import { loadNycuChapter } from "./chapters/nycuChapter.js";
-import { loadDolphinChapter } from "./chapters/dolphinChapter.js";
-import { loadMiaoliDroneChapter } from "./chapters/miaoliDroneChapter.js";
-import { load3dDroneChapter } from "./chapters/3dDroneChapter.js";
-import { loadStreamChapter } from "./chapters/streamChapter.js";
-//2025計畫項目
-import { load1Chapter } from "./chapters/load1Chapter.js";
-import { load3Chapter } from "./chapters/load3Chapter.js";
-import { load4Chapter } from "./chapters/load4Chapter.js";
-import { load5Chapter } from "./chapters/load5Chapter.js";
-import { load6_1Chapter } from "./chapters/load6_1Chapter.js";
-import { load6_2_1Chapter } from "./chapters/load6_2_1Chapter.js";
-import { load6_2_2Chapter } from "./chapters/load6_2_2Chapter.js";
-// import { load3DBuildingsLayer } from "./layers/buildings3DLayer.js";
+import { loadGeojsonSource } from "./source/loadGeojsonSource.js";
+import { addPointLayer } from "./layers/addPointLayer.js";
+import { addLineLayer } from "./layers/addLineLayer.js";
+import { addThreejsLine } from "./layers/addThreejsLine.js";
+
+import { mapOnEvents } from "./events/mapOnEvents.js";
+
+import { load11Chapter } from "./chapters/load11Chapter.js";
+import config from "../config/config.js";
 
 export function loadAllChapters(map, tb) {
-  loadNycuChapter(map);
-  loadDolphinChapter(map);
-  loadMiaoliDroneChapter(map);
-  load3dDroneChapter(map, tb);
-  loadStreamChapter(map);
-  // load3DBuildingsLayer(map);
-  load1Chapter(map);
-  load3Chapter(map);
-  load4Chapter(map);
-  load5Chapter(map);
-  load6_1Chapter(map);
-  load6_2_1Chapter(map);
-  load6_2_2Chapter(map);
-  // 你可以在這裡新增其他章節
+  config.chapters.map((chapter) => {
+    if (chapter.id !== "chapter-00") {
+      // console.log(chapter);
+    }
+    const activeChapters = [
+      "chapter-07",
+      "chapter-01",
+      "chapter-02",
+      "chapter-03",
+      "chapter-04",
+    ];
+
+    if (chapter.id !== "chapter-00") {
+      //讀入資料來源
+      loadGeojsonSource(map, chapter.id);
+
+      //增加視覺化圖層
+      // === 加入 PointLayer ===
+      const PointSource = chapter.layerData?.source?.PointSource;
+      if (PointSource) {
+        const PointPaths = Array.isArray(PointSource)
+          ? PointSource
+          : [PointSource];
+        PointPaths.forEach((_, i) => {
+          PointPaths.length > 1
+            ? addPointLayer(map, `${chapter.id}_${i}`)
+            : addPointLayer(map, chapter.id);
+        });
+      }
+
+      // === 加入 LineLayer ===
+      const lineSource = chapter.layerData?.source?.LineSource;
+      if (lineSource) {
+        const linePaths = Array.isArray(lineSource) ? lineSource : [lineSource];
+        linePaths.forEach((_, i) => {
+          linePaths.length > 1
+            ? addLineLayer(map, `${chapter.id}_${i}`)
+            : addLineLayer(map, chapter.id);
+        });
+      }
+
+      // === 加入 Line3DLayer ===
+      const line3DSource = chapter.layerData?.source?.Line3DSource;
+      if (line3DSource) {
+        const linePaths = Array.isArray(line3DSource)
+          ? line3DSource
+          : [line3DSource];
+        linePaths.forEach((_, i) => {
+          const datapath = chapter.layerData.source.Line3DSource;
+          addThreejsLine(tb, datapath[i]);
+        });
+      }
+
+      const mediaType = chapter.layerData?.mediaType;
+      mapOnEvents(map, chapter.id, mediaType);
+    }
+  });
+
+  load11Chapter(map);
 }

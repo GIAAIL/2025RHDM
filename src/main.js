@@ -4,7 +4,7 @@
 import { setupStoryElements } from "./modules/init/setupStoryElements.js";
 import { initializeMap } from "./modules/init/mapConfig.js";
 import { setupScrollEvents } from "./modules/events/scrollEvents.js";
-import { setupAutoAdvance } from "./modules/events/autoAdvanceChapter.js";
+import { autoplay } from "./modules/utils/autoplay.js";
 
 // 匯入所有章節的統一載入函式
 import { loadAllChapters } from "./modules/loadAllChapters.js";
@@ -41,7 +41,7 @@ async function init() {
   setupScrollEvents(map, insetMap, tb, config);
 
   // 啟用自動章節切換功能
-  setupAutoAdvance();
+  autoplay();
 }
 
 // 啟動初始化並捕捉錯誤

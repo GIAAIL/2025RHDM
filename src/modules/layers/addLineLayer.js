@@ -1,11 +1,9 @@
-export function addLineLayer(map, line_data, line_name, color) {
-  var sourceName = "route_" + line_name;
-  map.addSource(sourceName, {
-    type: "geojson",
-    data: line_data,
-  });
+export function addLineLayer(map, chapterID) {
+  var sourceName = chapterID + "_LineSource";
+  var LayerName = chapterID + "_LineLayer";
+
   map.addLayer({
-    id: sourceName,
+    id: LayerName,
     type: "line",
     source: sourceName,
     layout: {
@@ -13,7 +11,7 @@ export function addLineLayer(map, line_data, line_name, color) {
       "line-cap": "round",
     },
     paint: {
-      "line-color": color,
+      "line-color": "#000000",
       "line-width": 3,
     },
   });

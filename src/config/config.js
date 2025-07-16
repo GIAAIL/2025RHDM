@@ -41,6 +41,7 @@ export default {
       onChapterEnter: [],
       onChapterExit: [],
       mediaType: "none",
+      layerData: {},
     },
     {
       id: "chapter-01",
@@ -59,7 +60,14 @@ export default {
       callback: "",
       onChapterEnter: [],
       onChapterExit: [],
-      mediaType: "image",
+      layerData: {
+        source: {
+          PointSource:
+            "datasets/nycu_photo/2023_0321_183347_photo_Info.geojson",
+        },
+        IconPath: "public/images/pin_image_v5.png",
+        mediaType: "image",
+      },
     },
     {
       id: "chapter-02",
@@ -78,7 +86,13 @@ export default {
       callback: "",
       onChapterEnter: [],
       onChapterExit: [],
-      mediaType: "videoFile",
+      layerData: {
+        source: {
+          PointSource: "datasets/Dolphin/video/dp/data.geojson",
+        },
+        IconPath: "public/images/pin_dolphin_v5.png",
+        mediaType: "videoApi",
+      },
     },
     {
       id: "chapter-03",
@@ -98,7 +112,19 @@ export default {
       callback: "",
       onChapterEnter: [],
       onChapterExit: [],
-      mediaType: "video",
+      layerData: {
+        source: {
+          LineSource: [
+            "datasets/Miaoli_drone/2023_0531_Miaoli_dronePath/2023_0316_1130_drone_path_0.txt",
+            "datasets/Miaoli_drone/2023_0531_Miaoli_dronePath/2023_0316_1154_drone_path_0.txt",
+            "datasets/Miaoli_drone/2023_0531_Miaoli_dronePath/2023_0316_1154_drone_path_1.txt",
+            "datasets/Miaoli_drone/2023_0531_Miaoli_dronePath/2023_0316_1441_drone_path_0.txt",
+          ],
+          PointSource: "datasets/Miaoli_drone/miaoli_drone.geojson",
+        },
+        IconPath: "public/images/pin_drone_v5.png",
+        mediaType: "videoApi",
+      },
     },
     {
       id: "chapter-04",
@@ -118,6 +144,17 @@ export default {
       onChapterEnter: [],
       onChapterExit: [],
       mediaType: "none",
+      layerData: {
+        source: {
+          Line3DSource: [
+            "datasets/dronePath_demo/2023_0409_170757_drone_path_0.txt",
+            "datasets/dronePath_demo/2023_0409_170757_drone_path_1.txt",
+            "datasets/dronePath_demo/2023_0409_170757_drone_path_2.txt",
+          ],
+        },
+        IconPath: "public/images/pin_drone_v5.png",
+        mediaType: "",
+      },
     },
     {
       id: "chapter-05",
@@ -136,7 +173,14 @@ export default {
       callback: "",
       onChapterEnter: [],
       onChapterExit: [],
-      mediaType: "video",
+      layerData: {
+        source: {
+          PointSource:
+            "datasets/station_videoStram/station_videoStream.geojson",
+        },
+        IconPath: "public/images/pin_VideoCamera_v5.png",
+        mediaType: "videoApi",
+      },
     },
     {
       id: "chapter-06",
@@ -155,7 +199,13 @@ export default {
       callback: "",
       onChapterEnter: [],
       onChapterExit: [],
-      mediaType: "video",
+      layerData: {
+        source: {
+          PointSource: "datasets/2025_project-04/data.geojson",
+        },
+        IconPath: "public/images/pin_drone_v5.png",
+        mediaType: "videoApi",
+      },
     },
     {
       id: "chapter-07",
@@ -174,7 +224,14 @@ export default {
       callback: "",
       onChapterEnter: [],
       onChapterExit: [],
-      mediaType: "video",
+      layerData: {
+        source: {
+          LineSource: "datasets/2025_project-01/pathCoord.geojson",
+          PointSource: "datasets/2025_project-01/data.geojson",
+        },
+        IconPath: "public/images/pin_drone_v5.png",
+        mediaType: "videoApi",
+      },
     },
 
     {
@@ -194,7 +251,14 @@ export default {
       callback: "",
       onChapterEnter: [],
       onChapterExit: [],
-      mediaType: "video",
+      layerData: {
+        source: {
+          LineSource: "datasets/2025_project-03/pathCoord.geojson",
+          PointSource: "datasets/2025_project-03/data.geojson",
+        },
+        IconPath: "public/images/pin_drone_v5.png",
+        mediaType: "videoApi",
+      },
     },
 
     {
@@ -215,6 +279,13 @@ export default {
       onChapterEnter: [],
       onChapterExit: [],
       mediaType: "video",
+      layerData: {
+        source: {
+          PointSource: "datasets/2025_project-05/data.geojson",
+        },
+        IconPath: "public/images/pin_drone_v5.png",
+        mediaType: "videoApi",
+      },
     },
     {
       id: "chapter-10",
@@ -233,7 +304,13 @@ export default {
       callback: "",
       onChapterEnter: [],
       onChapterExit: [],
-      mediaType: "video",
+      layerData: {
+        source: {
+          PointSource: "datasets/2025_project-06_1/data.geojson",
+        },
+        IconPath: "public/images/pin_drone_v5.png",
+        mediaType: "videoApi",
+      },
     },
     {
       id: "chapter-11",
@@ -252,7 +329,13 @@ export default {
       callback: "",
       onChapterEnter: [],
       onChapterExit: [],
-      mediaType: "video",
+      layerData: {
+        source: {
+          PointSource: "datasets/2025_project-06_2_1/data.geojson",
+        },
+        IconPath: "public/images/pin_drone_v5.png",
+        mediaType: "videoApi",
+      },
       models: [
         {
           path: "model/model1.glb",
@@ -287,7 +370,13 @@ export default {
       callback: "",
       onChapterEnter: [],
       onChapterExit: [],
-      mediaType: "video",
+      layerData: {
+        source: {
+          PointSource: "datasets/2025_project-06_2_2/data.geojson",
+        },
+        IconPath: "public/images/pin_drone_v5.png",
+        mediaType: "videoApi",
+      },
     },
   ],
 };
