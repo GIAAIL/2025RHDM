@@ -339,14 +339,14 @@ export default {
       },
       models: [
         {
-          path: "https://giaail.github.io/2025RHDM/model/model1.glb",
+          path: "./model/model1.glb",
           lngLat: [121.572053, 24.987097],
           altitude: -1,
           scale: 0.4,
           rotation: [0, 0, 0],
         },
         {
-          path: "model/model2.glb",
+          path: "./model/model2.glb",
           lngLat: [121.572062, 24.98758],
           altitude: 0,
           scale: 0.4,
