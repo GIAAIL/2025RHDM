@@ -379,5 +379,30 @@ export default {
         mediaType: "videoApi",
       },
     },
+    {
+      id: "chapter-13",
+      alignment: "left",
+      hidden: false,
+      title: "13. 子二 裂縫偵測",
+      description: "子二 裂縫偵測",
+      location: {
+        center: [121.571662, 24.988242],
+        zoom: 15.5,
+        pitch: 26,
+        bearing: 0,
+      },
+      mapAnimation: "flyTo",
+      rotateAnimation: true,
+      callback: "",
+      onChapterEnter: [],
+      onChapterExit: [],
+      layerData: {
+        source: {
+          PointSource: "datasets/2025_project-01/data.geojson",
+        },
+        IconPath: "public/images/pin_drone_v5.png",
+        mediaType: "videoApi",
+      },
+    },
   ],
 };
