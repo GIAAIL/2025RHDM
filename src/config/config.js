@@ -2,9 +2,11 @@
 
 export default {
   // Mapbox 樣式與授權設定
-  style: "mapbox://styles/yunchen-lee/clsvlegso000y01oic95c3egs", // 自訂樣式（隱藏 shield）
+  style: "mapbox://styles/ms-scott/cmi58npgw00dr01r68gqte17j", // 自訂樣式（隱藏 shield）
+  //"mapbox://styles/yunchen-lee/clsvlegso000y01oic95c3egs"
   accessToken:
-    "pk.eyJ1IjoieXVuY2hlbi1sZWUiLCJhIjoiY2wxeGttYmg0MDNwaTNicWY5bWM5ZHM0OCJ9.gS5S-DMTk308nQP8MAzN0w", // 使用者 token
+    "pk.eyJ1IjoibXMtc2NvdHQiLCJhIjoiY2x0MnQwaWh5MXI2NDJpb2ViNTZsNHM1OSJ9.gCgtGXrmp8EgcsKeOdW9EA", // 使用者 token
+  //"pk.eyJ1IjoieXVuY2hlbi1sZWUiLCJhIjoiY2wxeGttYmg0MDNwaTNicWY5bWM5ZHM0OCJ9.gS5S-DMTk308nQP8MAzN0w"
 
   // 互動與顯示設定
   showMarkers: false, // 是否顯示預設 marker
